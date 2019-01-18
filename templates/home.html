@@ -1,17 +1,17 @@
 <html>
 <head>
-  <link rel="stylesheet" href="css/main.css"/>
+  <link rel="stylesheet" href="main.css" />
 </head>
 <body>
-  <img src="images/cng.png" height="48" width="48"/>
-  Sample Go Web Application!!
-      <div>
-      	<form action="/" method="post">
-			https://swapi.co/api/<input type="text" name="path">
-			<input type="submit" value="request">
-		</form>
-          <p id="result-title">Result：</p>
-          <p id="result-box">{{.Result}}</p>
-      </div>
+  <h1>Sample Go Web Application!</h1>
+  <div>
+    <form class="searchform cf" action="/" method="post">
+      <p>https://swapi.co/api/</p>
+      <input type="text" name="path">
+      <button type="submit">request</button>
+    </form>
+  </div>
+      <p id="result-title">Result：</p>
+      <div id="result-box">{{.Result}}</div>
 </body>
 </html>
