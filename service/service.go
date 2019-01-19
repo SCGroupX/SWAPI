@@ -1,6 +1,7 @@
 package service
 
 import (
+    "net/http"
     "os"
 
     "github.com/codegangsta/negroni"
@@ -62,5 +63,6 @@ func initRoutes(mx *mux.Router, formatter *render.Render) {
 
     //mx.PathPrefix("/static").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir(webRoot+"/assets/"))))
     mx.HandleFunc("/", homeHandler(formatter))
+    mx.PathPrefix("/").Handler(http.FileServer(http.Dir(webRoot + "/assets/")))
 
 }
