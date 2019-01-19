@@ -34,3 +34,16 @@
   - `vehicles`资源
     - `api/vehicles/{id} GET`
 
+## Test:
+
+我们以`https://swapi.co/api/people/1`为例进行测试：
+
+![front](assets/images/front.png)
+
+服务端显示如下：
+
+![test](assets/images/test.png)
+
+测试成功。
+
+ 

@@ -95,18 +95,16 @@ body {
 	font-size: 16px;
 	color: black;
 }
+.result-part {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+}
 #result-box {
 	font-size: 14px;
 	color: black;
 }
-
-.result-part {
-	position: absolute;
-	top: 40%;
-}
-
 .result-part p {
-	position: relative;
 	font-weight: bold;
 	font-size: 18px;
 }
