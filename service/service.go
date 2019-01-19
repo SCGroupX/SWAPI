@@ -38,22 +38,22 @@ func initRoutes(mx *mux.Router, formatter *render.Render) {
     }
 
     filmsSubRouter := mx.PathPrefix("/api/films").Subrouter()
-    filmsSubRouter.HandleFunc("/{id:[0-9]+}", routerHandler(formatter)).Methods("GET")
+    filmsSubRouter.HandleFunc("/{id:[0-9]+}", filmsHandler(formatter)).Methods("GET")
 
     peopleSubRouter := mx.PathPrefix("/api/people").Subrouter()
-    peopleSubRouter.HandleFunc("/{id:[0-9]+}", routerHandler(formatter)).Methods("GET")
+    peopleSubRouter.HandleFunc("/{id:[0-9]+}", peopleHandler(formatter)).Methods("GET")
 
     planetsSubRouter := mx.PathPrefix("/api/planets").Subrouter()
-    planetsSubRouter.HandleFunc("/{id:[0-9]+}", routerHandler(formatter)).Methods("GET")
+    planetsSubRouter.HandleFunc("/{id:[0-9]+}", planetsHandler(formatter)).Methods("GET")
 
     speciesSubRouter := mx.PathPrefix("/api/species").Subrouter()
-    speciesSubRouter.HandleFunc("/{id:[0-9]+}", routerHandler(formatter)).Methods("GET")
+    speciesSubRouter.HandleFunc("/{id:[0-9]+}", speciesHandler(formatter)).Methods("GET")
 
     starshipsSubRouter := mx.PathPrefix("/api/starships").Subrouter()
-    starshipsSubRouter.HandleFunc("/{id:[0-9]+}", routerHandler(formatter)).Methods("GET")
+    starshipsSubRouter.HandleFunc("/{id:[0-9]+}", starshipsHandler(formatter)).Methods("GET")
 
     vehiclesSubRouter := mx.PathPrefix("/api/vehicles").Subrouter()
-    vehiclesSubRouter.HandleFunc("/{id:[0-9]+}", routerHandler(formatter)).Methods("GET")
+    vehiclesSubRouter.HandleFunc("/{id:[0-9]+}", vehiclesHandler(formatter)).Methods("GET")
     // mx.HandleFunc("/api/people/", peopleHandler(formatter)).Methods("GET")
     // mx.HandleFunc("/api/planets/", planetsHandler(formatter)).Methods("GET")
     // mx.HandleFunc("/api/species/", speciesHandler(formatter)).Methods("GET")

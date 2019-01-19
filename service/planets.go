@@ -11,16 +11,20 @@ import (
     "github.com/SCGroupX/SWAPI/swapi"
 )
 
-func routerHandler(formatter *render.Render) http.HandlerFunc {
+func planetsHandler(formatter *render.Render) http.HandlerFunc {
 
 	return func(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("method:", r.Method) //获取请求的方法
 		if r.Method == "GET" {
 			path := r.URL.Path
+			fmt.Println("path: ", path)
 			pos := strings.LastIndex(path, "/")
-			id, _ := strconv.Atoi(path[pos:])
+			fmt.Println("pos: ", pos)
+			fmt.Println("substr: ", path[pos+1:])
+			id, _ := strconv.Atoi(path[pos+1:])
+			fmt.Println("id: ", id)
 
-			s, _ := swapi.GetFilm(id)
+			s, _ := swapi.GetPlanet(id)
 			jsIndent,_ := json.MarshalIndent(s, "", "\t")
 			fmt.Println(string(jsIndent))
 
